@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 #include "expression/syntax/SyntaxExpr.h"
+#include "expression/common.h"
 #include "expression/syntax/ConstSyntaxExpr.h"
 #include "expression/syntax/AttributeSyntaxExpr.h"
 #include "expression/syntax/BinarySyntaxExpr.h"

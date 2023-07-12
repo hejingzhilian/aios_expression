@@ -18,6 +18,7 @@
 
 #include "expression/common.h"
 #include "expression/syntax/SyntaxExpr.h"
+#include "autil/Log.h"
 
 namespace expression {
 

@@ -37,7 +37,7 @@ public:
 public:
     virtual token_type lex(semantic_type* yylval, location_type* yylloc);
     std::string orgContext() {
-        std::istringstream *iss = dynamic_cast<std::istringstream*>(yyin);
+        std::istringstream *iss = dynamic_cast<std::istringstream*>(&yyin);
         return iss->str();
     }
 private:
