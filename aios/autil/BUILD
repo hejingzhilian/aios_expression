@@ -168,16 +168,16 @@ cc_library(
 #    strip_include_prefix='autil',
 #    alwayslink=True
 #)
-#cc_library(
-#    name='time_span',
-#    srcs=['autil/TimeSpan.cpp'],
-#    hdrs=['autil/TimeSpan.h', 'autil/Libdivide.h'],
-#    deps=[':log'],
-#    visibility=['//visibility:public'],
-#    include_prefix='autil',
-#    strip_include_prefix='autil',
-#    alwayslink=True
-#)
+cc_library(
+    name='time_span',
+    srcs=['autil/TimeSpan.cpp'],
+    hdrs=['autil/TimeSpan.h', 'autil/Libdivide.h'],
+    deps=[':log'],
+    visibility=['//visibility:public'],
+    include_prefix='autil',
+    strip_include_prefix='autil',
+    alwayslink=True
+)
 #cc_library(
 #    name='snapshot_vector',
 #    hdrs=['autil/SnapshotVector.h'],
@@ -538,20 +538,20 @@ cc_library(
 #    strip_include_prefix='autil',
 #    alwayslink=True
 #)
-#cc_library(
-#    name='mem_pool_container',
-#    srcs=['autil/mem_pool/PoolString.cpp'],
-#    hdrs=[
-#        'autil/mem_pool/PoolMap.h', 'autil/mem_pool/PoolString.h',
-#        'autil/mem_pool/PoolVector.h', 'autil/mem_pool/Set.h',
-#        'autil/mem_pool/Vector.h', 'autil/mem_pool/Map.h'
-#    ],
-#    deps=[':mem_pool_base'],
-#    visibility=['//visibility:public'],
-#    include_prefix='autil',
-#    strip_include_prefix='autil',
-#    alwayslink=True
-#)
+cc_library(
+    name='mem_pool_container',
+    srcs=['autil/mem_pool/PoolString.cpp'],
+    hdrs=[
+        'autil/mem_pool/PoolMap.h', 'autil/mem_pool/PoolString.h',
+        'autil/mem_pool/PoolVector.h', 'autil/mem_pool/Set.h',
+        'autil/mem_pool/Vector.h', 'autil/mem_pool/Map.h'
+    ],
+    deps=[':mem_pool_base'],
+    visibility=['//visibility:public'],
+    include_prefix='autil',
+    strip_include_prefix='autil',
+    alwayslink=True
+)
 cc_library(
     name='string_type',
     srcs=['autil/ShortString.cpp', 'autil/ConstString.cpp'],
@@ -636,16 +636,16 @@ cc_library(
     strip_include_prefix='autil'
 )
 
-#cc_library(
-#    name='pack_data',
-#    srcs=['autil/PackDataFormatter.cpp'],
-#    hdrs=['autil/PackDataReader.h', 'autil/PackDataFormatter.h'],
-#    deps=[':common_macros', ':multi_value'],
-#    alwayslink=True,
-#    visibility=['//visibility:public'],
-#    include_prefix='autil',
-#    strip_include_prefix='autil'
-#)
+cc_library(
+    name='pack_data',
+    srcs=['autil/PackDataFormatter.cpp'],
+    hdrs=['autil/PackDataReader.h', 'autil/PackDataFormatter.h'],
+    deps=[':common_macros', ':multi_value'],
+    alwayslink=True,
+    visibility=['//visibility:public'],
+    include_prefix='autil',
+    strip_include_prefix='autil'
+)
 cc_library(
     name='multi_value',
     srcs=['autil/MultiValueType.cpp'],
@@ -657,16 +657,16 @@ cc_library(
     include_prefix='autil',
     strip_include_prefix='autil'
 )
-#cc_library(
-#    name='hyper_loglog',
-#    srcs=['autil/Hyperloglog.cpp'],
-#    hdrs=['autil/Hyperloglog.h'],
-#    deps=[':data_buffer'],
-#    alwayslink=True,
-#    visibility=['//visibility:public'],
-#    include_prefix='autil',
-#    strip_include_prefix='autil'
-#)
+cc_library(
+    name='hyper_loglog',
+    srcs=['autil/Hyperloglog.cpp'],
+    hdrs=['autil/Hyperloglog.h'],
+    deps=[':data_buffer'],
+    alwayslink=True,
+    visibility=['//visibility:public'],
+    include_prefix='autil',
+    strip_include_prefix='autil'
+)
 cc_library(
     name='data_buffer',
     srcs=['autil/DataBuffer.cpp'],
@@ -759,14 +759,14 @@ cc_library(
 #    include_prefix='autil',
 #    strip_include_prefix='autil'
 #)
-#cc_library(
-#    name='murmur_hash',
-#    srcs=['autil/MurmurHash.cpp'],
-#    hdrs=['autil/MurmurHash.h'],
-#    visibility=['//visibility:public'],
-#    include_prefix='autil',
-#    strip_include_prefix='autil'
-#)
+cc_library(
+    name='murmur_hash',
+    srcs=['autil/MurmurHash.cpp'],
+    hdrs=['autil/MurmurHash.h'],
+    visibility=['//visibility:public'],
+    include_prefix='autil',
+    strip_include_prefix='autil'
+)
 cc_library(
     name='NoCopyable',
     hdrs=['autil/NoCopyable.h'],

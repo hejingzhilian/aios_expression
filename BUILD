@@ -9,6 +9,7 @@ refresh_compile_commands(
       "//aios/autil:backtrace":"",
       "//aios/autil:common_macros":"",
       "//aios/autil:long_hash_value":"",
+      "//aios/expression:expression_syntax":"",
       "//aios/autil:log_test":""
     },
     # No need to add flags already in .bazelrc. They're automatically picked up.
