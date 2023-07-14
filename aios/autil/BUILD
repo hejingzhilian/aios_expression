@@ -402,51 +402,51 @@ cc_library(
 #    visibility=['//visibility:public'],
 #    alwayslink=True
 #)
-#cc_library(
-#    name='json_base',
-#    srcs=[
-#        'autil/legacy/json.cpp', 'autil/legacy/astream.cpp',
-#        'autil/legacy/string_utf8.cpp', 'autil/legacy/string_conversion.cpp',
-#        'autil/legacy/json_string_enhanced.cpp'
-#    ],
-#    hdrs=[
-#        'autil/legacy/any.h', 'autil/legacy/jsonizable_exception.h',
-#        'autil/legacy/json.h', 'autil/legacy/string_tools.h',
-#        'autil/legacy/astream.h'
-#    ],
-#    deps=[':string_helper', ':exception'],
-#    include_prefix='autil',
-#    strip_include_prefix='autil',
-#    visibility=['//visibility:public'],
-#    alwayslink=True
-#)
-#cc_library(
-#    name='fast_json',
-#    srcs=['autil/legacy/fast_jsonizable.cpp'],
-#    hdrs=[
-#        'autil/legacy/fast_jsonizable.h', 'autil/legacy/fast_jsonizable_dec.h'
-#    ],
-#    deps=['@rapidjson//:rapidjson', ':json_base', ':multi_value'],
-#    include_prefix='autil',
-#    strip_include_prefix='autil',
-#    visibility=['//visibility:public'],
-#    alwayslink=True
-#)
-#cc_library(
-#    name='json',
-#    hdrs=[
-#        'autil/legacy/legacy_jsonizable.h',
-#        'autil/legacy/legacy_jsonizable_dec.h', 'autil/legacy/jsonizable.h'
-#    ],
-#    deps=[
-#        '@rapidjson//:rapidjson', ':multi_value', ':multi_value_helper',
-#        ':json_base', ':fast_json'
-#    ],
-#    include_prefix='autil',
-#    strip_include_prefix='autil',
-#    visibility=['//visibility:public'],
-#    alwayslink=True
-#)
+cc_library(
+    name='json_base',
+    srcs=[
+        'autil/legacy/json.cpp', 'autil/legacy/astream.cpp',
+        'autil/legacy/string_utf8.cpp', 'autil/legacy/string_conversion.cpp',
+        'autil/legacy/json_string_enhanced.cpp'
+    ],
+    hdrs=[
+        'autil/legacy/any.h', 'autil/legacy/jsonizable_exception.h',
+        'autil/legacy/json.h', 'autil/legacy/string_tools.h',
+        'autil/legacy/astream.h'
+    ],
+    deps=[':string_helper', ':exception'],
+    include_prefix='autil',
+    strip_include_prefix='autil',
+    visibility=['//visibility:public'],
+    alwayslink=True
+)
+cc_library(
+    name='fast_json',
+    srcs=['autil/legacy/fast_jsonizable.cpp'],
+    hdrs=[
+        'autil/legacy/fast_jsonizable.h', 'autil/legacy/fast_jsonizable_dec.h'
+    ],
+    deps=['@rapidjson//:rapidjson', ':json_base', ':multi_value'],
+    include_prefix='autil',
+    strip_include_prefix='autil',
+    visibility=['//visibility:public'],
+    alwayslink=True
+)
+cc_library(
+    name='json',
+    hdrs=[
+        'autil/legacy/legacy_jsonizable.h',
+        'autil/legacy/legacy_jsonizable_dec.h', 'autil/legacy/jsonizable.h'
+    ],
+    deps=[
+        '@rapidjson//:rapidjson', ':multi_value', ':multi_value_helper',
+        ':json_base', ':fast_json'
+    ],
+    include_prefix='autil',
+    strip_include_prefix='autil',
+    visibility=['//visibility:public'],
+    alwayslink=True
+)
 cc_library(
     name='log',
     hdrs=['autil/Log.h'],
@@ -681,17 +681,17 @@ cc_library(
     include_prefix='autil',
     strip_include_prefix='autil'
 )
-#cc_library(
-#    name='multi_value_helper',
-#    srcs=['autil/MultiValueCreator.cpp'],
-#    hdrs=['autil/MultiValueCreator.h', 'autil/MultiValueWriter.h'],
-#    deps=[':mem_pool_base', ':string_type', ':multi_value'],
-#    implementation_deps=[':hash_base', ':exception'],
-#    alwayslink=True,
-#    visibility=['//visibility:public'],
-#    include_prefix='autil',
-#    strip_include_prefix='autil'
-#)
+cc_library(
+    name='multi_value_helper',
+    srcs=['autil/MultiValueCreator.cpp'],
+    hdrs=['autil/MultiValueCreator.h', 'autil/MultiValueWriter.h'],
+    deps=[':mem_pool_base', ':string_type', ':multi_value'],
+    implementation_deps=[':hash_base', ':exception'],
+    alwayslink=True,
+    visibility=['//visibility:public'],
+    include_prefix='autil',
+    strip_include_prefix='autil'
+)
 #cc_library(
 #    name='option_parser',
 #    srcs=['autil/OptionParser.cpp', 'autil/CommandLineParameter.cpp'],

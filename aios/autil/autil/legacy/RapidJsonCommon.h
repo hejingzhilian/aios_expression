@@ -13,46 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef ISEARCH_EXPRESSION_COMMON_H
-#define ISEARCH_EXPRESSION_COMMON_H
+#pragma once
 
-#include "autil/Log.h"
-#include "autil/CommonMacros.h"
+#include <assert.h>
+#include <string.h>
+#include <iosfwd>
+
 #include "autil/mem_pool/Pool.h"
-#include <memory>
-#include <map>
+#include "autil/CommonMacros.h"
 
 #ifndef RAPIDJSON_HAS_STDSTRING
 #define RAPIDJSON_HAS_STDSTRING 1
 #endif
 
-#include <rapidjson/document.h>
-#include <rapidjson/writer.h>
-#include <rapidjson/stringbuffer.h>
+#include "rapidjson/document.h"
+#include "rapidjson/error/en.h"
+#include "rapidjson/rapidjson.h"
 
-
-enum ConstExprType {
-    UNKNOWN,
-    INTEGER_VALUE,
-    FLOAT_VALUE,
-    STRING_VALUE,
-};
-
-//enum SerializeLevel {
-//    SL_NONE = 0,
-//    SL_PROXY = 2,
-//    SL_FRONTEND = 4
-//};
-
-namespace resource_reader {                                         
-class ResourceReader;                                               
-typedef std::shared_ptr<resource_reader::ResourceReader> ResourceReaderPtr; 
-}
-
-
-namespace expression {
-
-typedef int32_t docid_t;
+namespace autil {
 
 class AutilPoolAllocator {
 public:
@@ -97,7 +75,7 @@ public:
             return originalPtr;
         }
         void* newBuffer = Malloc(newSize);
-        RAPIDJSON_ASSERT(newBuffer != 0);
+        assert(newBuffer != 0);
         if (originalSize)
             std::memcpy(newBuffer, originalPtr, originalSize);
         return newBuffer;
@@ -110,23 +88,7 @@ public:
     bool ownPool;
 };
 
-typedef rapidjson::GenericValue<rapidjson::ASCII<>, expression::AutilPoolAllocator> SimpleValue;
-typedef rapidjson::GenericDocument<rapidjson::ASCII<>, expression::AutilPoolAllocator> SimpleDocument;
+typedef rapidjson::GenericValue<rapidjson::UTF8<>, AutilPoolAllocator> SimpleValue;
+typedef rapidjson::GenericDocument<rapidjson::UTF8<>, AutilPoolAllocator> SimpleDocument;
 
-#define EXPRESSION_TYPEDEF_PTR(x) typedef std::shared_ptr<x> x##Ptr;
-
-typedef std::map<std::string, std::string> KeyValueMap;
-
-typedef int32_t expressionid_t;
-#define INVALID_EXPRESSION_ID expressionid_t(-1)
-const std::string BUILD_IN_JOIN_DOCID_REF_PREIX = "_@_join_docid_";
-const std::string PROVIDER_VAR_NAME_PREFIX = "_@_user_data_";
-
-} // end namespace expression
-
-// #define DECLARE_RESOURCE_READER                                         
-//    class ResourceReader;                                               
-//    }
-
-
-#endif //ISEARCH_EXPRESSION_COMMON_H
+}
